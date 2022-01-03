@@ -1,6 +1,9 @@
 import tkinter as tk
 from tkinter import ttk
 from presenter import *
+from tkinter.constants import *
+from data_access import *
+from operator import itemgetter
 
 root = tk.Tk()
 root.title('PutMeOn')
