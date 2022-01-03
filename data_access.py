@@ -29,5 +29,9 @@ def get_recommendations(top_attributes):
                                 seed_genres=top_attributes['genres'], seed_tracks=top_attributes['tracks'])
     sacred_table = []
     for track in result['tracks']:
-        sacred_table.append([track['name'], track['popularity'], track['external_urls']])
+        if len(track['artists']) > 1:
+            artists = ', '.join([x['name'] for x in track['artists']])
+        else:
+            artists = track['artists'][0]['name']
+        sacred_table.append([track['name'], track['popularity'], track['external_urls']['spotify']])
     return sacred_table
