@@ -28,7 +28,7 @@ canvas.create_window((0, 0), window=aux_frame, anchor='nw')
 
 def get_recs():
     recs = get_recommendations(get_recc_data())
-    recs = sorted(recs, key=itemgetter(1))
+    recs = sorted(recs, key=itemgetter(1), reverse=True)
     print(recs)
 
     for track in recs:
